@@ -32,5 +32,9 @@
     {"id": 31, "super-category": "Sofa", "category": "Chaise Longue Sofa"},
     {"id": 32, "super-category": "Pier/Stool", "category": "Footstool / Sofastool / Bed End Stool / Stool"},
     {"id": 33, "super-category": "Lighting", "category": "Pendant Lamp"},
-    {"id": 34, "super-category": "Lighting", "category": "Ceiling Lamp"}
+    {"id": 34, "super-category": "Lighting", "category": "Ceiling Lamp"},
+    {"id": 35, "super-category": "Door/Window", "category": "Door / Window / Pocket"},
+    {"id": 36, "super-category": "Cabinet", "category": "CustomizedPersonalizedModel / CustomizedFurniture / Cabinet/LightBand / Cabinet / CustomizedFixedFurniture / CustomizedFeatureWall"},
+    {"id": 37, "super-category": "StructuralElement", "category": "Floor /  / CustomizedCeiling / Flue / LightBand / Ceiling / Customized_wainscot / ExtrusionCustomizedCeilingModel / WallOuter / SlabBottom / Baseboard / SlabTop / Cornice / BayWindow / ExtrusionCustomizedBackgroundWall / WallBottom / CustomizedBackgroundModel / clipMesh / Column / CustomizedPlatform / WallInner / SmartCustomizedCeiling / Beam / Back / Front / SewerPipe / Hole / WallTop / SlabSide"}
 ]
+

@@ -9,14 +9,14 @@ from analyzer import Analyzer
 def main(opts):
     # 3D-Front
     analyzer = Analyzer(is_debug=False)
-    analyzer.parse_houses(Path(opts.house_path), num_scenes=None)
-    analyzer.parse_shapes(Path(opts.shape_path))
+    analyzer.parse_houses(Path(opts.json_path), num_scenes=10)
+    analyzer.parse_shapes(Path(opts.future_path))
     analyzer.parse_shape_categories(Path("resources/category_mapping.json"))
     analyzer.collect_available_scene_furniture()
 
     # shape_analysis(analyzer)
-    # scene_analysis(analyzer)
-    room_analysis(analyzer)
+    scene_analysis(analyzer)
+    # room_analysis(analyzer)
 
 
 def shape_analysis(analyzer):
@@ -60,7 +60,7 @@ def scene_analysis(analyzer):
     headers = ["Type", "#rooms"]
     print(tabulate(entries, headers=headers, tablefmt="github"))
 
-    print("All non-empty rooms")
+    print("\nAll non-empty rooms")
     by_room_type = analyzer.get_rooms_by_room_type(non_empty=True)
     entries = sorted([[k, v] for k, v in by_room_type.items()], key=lambda x: x[1], reverse=True)
     headers = ["Type", "#rooms"]
@@ -69,14 +69,13 @@ def scene_analysis(analyzer):
 
 def room_analysis(analyzer):
     rooms_with_multiple_floors = analyzer.get_rooms_with_multiple_floors()
-
     print(len(rooms_with_multiple_floors))
 
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument("--house-path", type=str)
-    parser.add_argument("--shape-path", type=str)
+    parser.add_argument("--future_path", type=str)
+    parser.add_argument("--json_path", type=str)
     args = parser.parse_args()
 
     main(args)
